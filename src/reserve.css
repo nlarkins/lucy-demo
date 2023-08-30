@@ -1,0 +1,119 @@
+/* src/AudioDemo.css */
+
+@keyframes gradientTransition {
+    0% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+.audio-demo-container {
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(45deg, #FFC0CB, #ADD8E6, #D8BFD8, #FFC0CB, #ADD8E6, #D8BFD8); */
+    background: linear-gradient(45deg, #f6b9c3, #0956fb, #ff58ff, #FFC0CB, #08bbf7, #fb0ffb);
+    background-size: 200% 200%;
+    animation: gradientTransition 30s infinite;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.qsic-logo {
+    /*margin-bottom: 20px;*/
+    width: 20vw;  /* Adjust this value as needed */
+    max-width: 150px;  /* Prevent the logo from becoming too large on wide screens */
+    min-width: 80px;   /* Prevent the logo from becoming too small on narrow screens */
+    height: auto;
+}
+
+.cta {
+    margin-top: 20px;
+}
+
+.cta-link {
+    color: gold;
+}
+
+.audio-visualizer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: transparent;
+    border-radius: 0;
+}
+
+.qsic-logo {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: auto;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    background-color: #FFC0CB;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 18px;
+    border-color: transparent transparent transparent #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pause-icon {
+    width: 4px;
+    height: 24px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pause-icon:before, .pause-icon:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.pause-icon:before {
+    left: -8px;
+}
+
+.pause-icon:after {
+    right: -8px;
+}

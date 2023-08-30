@@ -12,24 +12,26 @@
 .audio-demo-container {
     font-family: Arial, sans-serif;
     background: linear-gradient(45deg, #FFC0CB, #ADD8E6, #D8BFD8, #FFC0CB, #ADD8E6, #D8BFD8);
+    /* background: linear-gradient(45deg, #f6b9c3, #0956fb, #ff58ff, #FFC0CB, #08bbf7, #fb0ffb); */
     background-size: 200% 200%;
-    animation: gradientTransition 30s infinite; /* 30s duration for each cycle */
+    animation: gradientTransition 30s infinite;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #FFF;
-    position:relative;
+    position: relative;
     overflow: hidden;
 }
 
-
 .qsic-logo {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
+    width: 20vw;  /* Adjust this value as needed */
+    max-width: 150px;  /* Prevent the logo from becoming too large on wide screens */
+    min-width: 80px;   /* Prevent the logo from becoming too small on narrow screens */
+    height: auto;
 }
-
-
 
 .cta {
     margin-top: 20px;
@@ -39,61 +41,79 @@
     color: gold;
 }
 
-/* ... existing styles ... */
-
-
-/* ... existing styles ... */
-
 .audio-visualizer {
-    position: absolute; /* Position the visualizer at the bottom of the container */
+    position: absolute;
     bottom: 0;
-    left: 0; /* Stretch from the left edge */
-    width: 100%; /* Full width */
-    height: 30vh; /* Adjust height as needed */
-    background: transparent; /* Slightly darker background */
-    border-radius: 0; /* No rounded corners */
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: transparent;
+    border-radius: 0;
 }
-/* ... existing styles ... */
 
 .qsic-logo {
     position: absolute;
-    top: 2%;  /* Adjust as needed */
+    top: 2%;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;  /* Adjust as needed */
+    width: 150px;
     height: auto;
 }
-/* ... existing styles ... */
 
 .play-button {
-    width: 60px; /* Adjust the size as needed */
+    width: 60px;
     height: 60px;
-    background-color: #FFC0CB; /* Light Pink color from Qsic logo */
-    border-radius: 50%; /* Makes it circular */
+    background-color: #FFC0CB;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-    position: relative; /* Added for positioning the triangle */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .play-button:hover {
-    transform: scale(1.1); /* Slightly enlarges the button on hover */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.play-button:before {
-    content: ''; /* No play icon */
+.play-icon {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 10px 0 10px 18px; /* Creates a triangle shape */
-    border-color: transparent transparent transparent #ffffff; /* Triangle color */
+    border-width: 10px 0 10px 18px;
+    border-color: transparent transparent transparent #ffffff;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); /* Centers the triangle */
+    transform: translate(-50%, -50%);
 }
 
+.pause-icon {
+    width: 4px;
+    height: 24px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pause-icon:before, .pause-icon:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.pause-icon:before {
+    left: -8px;
+}
+
+.pause-icon:after {
+    right: -8px;
+}
